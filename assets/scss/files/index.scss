@@ -1,7 +1,849 @@
-$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
+$font: normal normal 400 14px/21px Poppins;
+$font-pretitle-large: normal normal 400 24px/33px Poppins;
+$font-subtitle: normal normal 400 14px/24px Poppins;
+$font-bold: normal normal 700 26px/33px Poppins;
+$font-main-h1-large: normal normal 700 54px/72px Poppins;
+$font-button-white: normal normal 600 16px/31px Poppins;
+$font-link: normal normal 600 15px/21px Poppins;
+$font-dienst: normal normal 500 18px/25px Poppins;
+$font-nieuws-h1: normal normal 700 26px/36px Poppins;
+$font-nieuwsitem-h5: normal normal 700 16px/23px Poppins;
+$font-nieuwsitem-text: normal normal 400 14px/23px Poppins;
+$font-nieuws-link: normal normal 600 16px/23px Poppins;
+$font-voordelen-h1: normal normal 600 24px/33px Poppins;
+$font-voordelen-list-li: normal normal 400 16px/32px Poppins;
+$font-kennis-h1: normal normal 700 26px/37px Poppins;
+$font-about-h1: normal normal 700 26px/38px Poppins;
+$font-about-h1-large: normal normal 700 38px/51px Poppins;
+$font-kern-h1: normal normal 700 24px/33px Poppins;
+$font-footer: normal normal 400 16px/24px Poppins;
+$font-footer-smaller: normal normal 400 14px/24px Poppins;
+$font-button-login: normal normal 600 16px/31px Poppins;
+$font-slider: normal normal 400 16px/23px Poppins;
+$font-navbar-a: normal normal 400 16px/23px Poppins;
+
+$primary-color: #242424;
+$link-color-yellow: #E2B500;
+$dienst-h3-color: #3B3A3A;
+$dienst-text-color: #8F8F8F;
+$nieuwsitem-h5-color: #444444;
+$about-h1-color: #FFFFFF;
+$footer-color: #444444;
+
+$check-icon-color: #21910C;
+
+$button-white: #FFFFFF 0% 0% no-repeat padding-box;
+$button-red: #FF3D00 0% 0% no-repeat padding-box;
+
+$icon-background: transparent linear-gradient(180deg, #E2B500 0%, #FFCC00 100%) 0% 0% no-repeat padding-box;
+$nieuws-background: #F5F5F5 0% 0% no-repeat padding-box;
+$terugbellen-background: transparent linear-gradient(333deg, #E2B500 0%, #FFCC00 100%) 0% 0% no-repeat padding-box;
+$about-background: transparent linear-gradient(162deg, #E2B500 0%, #FFCC00 100%) 0% 0% no-repeat padding-box;
+$about-background-large: transparent linear-gradient(126deg, #E2B500 0%, #FFCC00 100%) 0% 0% no-repeat padding-box;
+$about-background-hand: transparent url('../images/Hand.svg') 100% 0% no-repeat padding-box;
+$footer-background: #F5F5F5 0% 0% no-repeat padding-box;
+
+@mixin placeholder
+{
+    &::-webkit-input-placeholder {@content}
+    &:-moz-placeholder           {@content}
+    &::-moz-placeholder          {@content}
+    &:-ms-input-placeholder      {@content}  
+}
+
+$phone: 576px;
+$tablet: 768px;
+$large: 992px;
+$xlarge: 1200px;
+$xxlarge: 1400px;
 
 body {
-  font: 100% $font-stack;
+  font: $font;
   color: $primary-color;
+  background-image: url(../images/background-shape.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 152%;
+  background-position: -117px 0;
+
+  @media (width >= $large) {
+    background-image: url(../images/background-shape.svg), url(../images/Background-element.svg);
+    background-size: 1241px, 1396px;
+    background-position: -458px -212px, -905px 1500px;
+  }
+
+  @media (width >= $xlarge) {
+    background-position: -336px -212px, -905px 1362px;
+  }
+
+  @media (width >= $xxlarge) {
+    background-position: 0 -35px, -905px 1305px;
+  }
+}
+
+.container {
+
+  @media (width < $large) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (width >= $phone) and (width < $large){
+    max-width: 100%;
+  }
+
+  @media (width >= $xxlarge) {
+    max-width: 1194px;
+  }
+}
+
+.main {
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  @media (width >= $large) {
+    padding-top: 39px;
+    padding-bottom: 95px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .menu-image {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    
+    img {
+      height: 35px;
+    }
+  }
+
+  .hamburger-icon {
+    position: absolute;
+    top: 24px;
+    right: 8px;
+
+    i {
+      font-size: 60px;
+      color: #fff;
+    }
+  }
+
+  .menu-bar {
+
+    .navbar {
+      padding-top: 3px;
+      padding-bottom: 3px;
+
+      .navbar-nav {
+
+        a {
+          font: $font-navbar-a;
+          color: $primary-color;
+          padding-left: 17.5px;
+          padding-right: 17.5px;
+        }
+      }
+    }
+  }
+  
+  .login-button {
+    button {
+      height: 45px;
+      width: 151px;
+      font: $font-button-login;
+      background: $button-red;
+      border: 0;
+      border-radius: 10px;
+    }
+  }
+
+  .header {
+    margin-top: 55px;
+  
+    @media (width >= $large) {
+      margin-top: 83px;
+    }
+    
+    @media (width >= $xxlarge) {
+      margin-top: 181px;
+    }
+
+    .pretitle {
+      font: $font;
+      color: $primary-color;
+    
+      @media (width >= $large) {
+        font: $font-pretitle-large;
+      }
+    }
+
+    .title {
+      margin-top: 5px;
+
+      @media (width >= $large) {
+        margin-top: 13px;
+      }
+    
+      h1 {
+        font: $font-bold;
+
+        @media (width >= $large) {
+          font: $font-main-h1-large;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .subtitle {
+      font: $font-subtitle;
+      margin-top: 5px;
+
+      @media (width >= $large) {
+        margin-top: 18px;
+        font-size: 16px;
+        max-width: 475px;
+      }
+    }
+
+    .about-us {
+      margin-top: 22px;
+
+      @media (width >= $large) {
+        margin-top: 32px;
+      }
+    
+      button {
+        background: $button-white;
+        font: $font-button-white;
+        text-decoration: none;
+        color: $primary-color;
+        border-radius: 10px;
+        width: 178px;
+      }
+    }
+    
+    .header-image {
+      margin-top: 33px;
+    
+      @media (width >= $large) {
+        margin-top: 0;
+        width: calc(100vw / 2 - 20px);
+        max-width: 851px;
+        position: absolute;
+        right: 20px;
+      }
+
+      @media (Width >= $xlarge) {
+        width: calc(100vw / 2 - 50px);
+        right: 50px;
+      }
+
+      @media (width >= $xxlarge) {
+        width: calc(100vw / 2 - 94px);
+        right: 94px;
+        top: 167px;
+      }
+    
+      img {
+        box-shadow: 0px 0px 40px #0000001A;
+        border-radius: 20px;
+        width: 100%;
+      }
+    }
+  }
+
+  .diensten {
+    margin-top: 48px;
+
+    @media (width >= $large) {
+      margin-top: 308px;
+    }
+  
+    .dienstitle {
+      h1 {
+        line-height: 35px;
+        margin: 0;
+      }
+    }
+  
+    .diensttext {
+      font: $font-subtitle;
+      margin-top: 25px;
+    }
+  
+    .dienstlink {
+      margin-top: 25px;
+    }
+  
+    a {
+      color: $link-color-yellow;
+      font: $font-link;
+      text-decoration: none;
+    }
+  
+    .dienstbox {
+      margin-top: 50px;
+  
+      .icon {
+        background: $icon-background;
+        box-shadow: 0px 0px 15px #00000042;
+        height: 79px;
+        width: 79px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 12px;
+      }
+  
+      img {
+        height: 48px;
+        width: 48px;
+      }
+  
+      .title {
+        margin-top: 22px;
+  
+        h3 {
+          font: $font-dienst;
+          color: $dienst-h3-color;
+          margin-bottom: 0;
+        }
+      }
+  
+      .line {
+        background: #E2B500 0% 0% no-repeat padding-box;
+        border-radius: 10px;
+        height: 3px;
+        width: 79px;
+        margin-left: 12px;
+        margin-top: 21px;
+      }
+  
+      .text {
+        margin-top: 21px;
+        font: $font-subtitle;
+        color: $dienst-text-color;
+      }
+    }
+    
+    @media (width >= $large) {
+      .dienstbox {
+        margin-top: 0px;
+      }
+      
+      .dienstbox:nth-child(n+4) {
+        margin-top: 63px;
+      }
+    }
+  }
+}
+
+.nieuws {
+  padding-top: 40px;
+  padding-bottom: 45px;
+  padding-left: 19px;
+  padding-right: 16px;
+  background: $nieuws-background;
+
+  .title{
+
+    h1 {
+      font: $font-nieuws-h1;
+      margin-bottom: 5px;
+    }
+  }
+
+  .nieuwsitem{
+    margin-top: 20px;
+    font: $font-nieuwsitem-text;
+    color: $nieuwsitem-h5-color;
+
+    h5 {
+      font: $font-nieuwsitem-h5;
+      color: $nieuwsitem-h5-color;
+      margin-bottom: 0;
+    }
+  }
+
+  .nieuwslink {
+    margin-top: 32px;
+
+    a {
+      color: $link-color-yellow;
+      font: $font-nieuws-link;
+      text-decoration: none;
+    }
+  }
+}
+
+.voordelen {
+  padding-top: 30px;
+  padding-bottom: 60px;
+
+  .title {
+    margin-top: 20px;
+    h1 {
+      font: $font-voordelen-h1;
+      margin-bottom: 0px;
+    }
+  }
+
+  .list {
+    font: $font-voordelen-list-li;
+    margin-top: 24px;
+
+    .icon-box {
+      height: 32px;
+      margin-left: -5px;
+
+      i {
+        color: $check-icon-color;
+        font-size: 32px;
+      }
+    }
+
+    .voordeeltext {
+      padding-left: 28px;
+    }
+  }
+}
+
+.terugbellen {
+  background: $terugbellen-background;
+  padding-bottom: 50px;
+  padding-top: 33px;
+
+  .title {
+    margin-top: 3px;
+    h1 {
+      margin-bottom: 0;
+      font: $font-voordelen-h1;
+    }
+  }
+
+  .text {
+    margin-top: 25px;
+    font: $font-subtitle;
+    height: 57px;
+  }
+
+  .form {
+    margin-top: 19px;
+    
+    .nummer {
+      height: 50px;
+      border-radius: 10px;
+
+      @include placeholder {
+        color: $nieuwsitem-h5-color
+      }
+    }
+
+    button {
+      background: $button-red;
+      width: 205px;
+      height: 50px;
+      border: 1px solid #FFFFFF;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+  }
+}
+
+.ni-vo-te {
+  .nieuws {
+    padding-left: 37px;
+    padding-right: 37px;
+    padding-top: 57px;
+    padding-bottom: 56px;
+    border: 8px solid #FFFFFF;
+    border-radius: 20px;
+    opacity: 0.9;
+  }
+}
+
+.voordelen-terugbellen {
+  & > .row {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+  }
+
+  .terugbellen {
+    border-radius: 10px;
+    padding-left: 44px;
+    padding-right: 44px;
+    padding-bottom: 35px;
+    padding-top: 33px;
+
+    .form {
+
+      height: 50px;
+
+      button {
+        margin-top: 0;
+        top: -50px;
+        left: calc(100% - 205px);
+        position: relative;
+      }
+    }
+  }
+}
+
+.kennis {
+  padding-top: 70px;
+  padding-bottom: 76px;
+
+  @media (width >= $large) {
+    padding-top: 161px;
+    padding-bottom: 109px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .kennisbox {
+
+    @media (width >= $large) {
+      &> .row {
+        max-width: 480px;
+      }
+    }
+
+    .title {
+  
+      h1 {
+        font: $font-kennis-h1;
+        margin-bottom: 0;
+
+        @media (width >= $large) {
+          font-size: 38px;
+          line-height: 51px;
+        }
+      }
+    }
+  
+    .text {
+      margin-top: 33px;
+      font: $font-subtitle;
+
+      @media (width >= $large) {
+        font-size: 16px;
+        margin-top: 18px;
+      }
+    }
+  
+    .kennislink {
+      margin-top: 30px;
+      
+      a {
+        color: $link-color-yellow;
+        font: $font-nieuws-link;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .slider {
+    margin-top: 37px;
+    height: 304px;
+
+    @media (width >= $large) {
+      padding-left: 15px;
+      margin-top: 0;
+    }
+
+    .sliderbox {
+      height: 271px;
+      width: 173px !important;
+      margin-left: 20px;
+      margin-right: 10px;
+      
+      .slider-image {
+        height: 233px;
+      }
+
+      .slider-text {
+        margin-top: 15px;
+        font: $font-slider;
+        color: $primary-color;
+      }
+    }   
+    
+    .slick-dots {
+      text-align: right;
+      padding-left: 0;
+      margin-top: 14px;
+    }
+
+    .slick-dots li {
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 20px;
+      margin: 0 5px;
+      padding: 0;
+      cursor: pointer;
+    }
+    
+    .slick-dots li button {
+        font-size: 0;
+        line-height: 0;
+        display: block;
+        width: 30px;
+        height: 20px;
+        padding: 5px;
+        cursor: pointer;
+        color: transparent;
+        border: 0;
+        outline: none;
+        background: transparent;
+    }
+    
+    .slick-dots li button:before {
+        content: '―';
+        font-size: 30px;
+        line-height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 20px;
+        text-align: center;
+        opacity: 1;
+        color: #D5D5D5;
+    }
+
+    .slick-dots li.slick-active button:before {
+      color: #E2B500;
+    }
+  }
+}
+
+.background-div {
+  @media (width >= $large) {
+    max-width: 960px;
+    margin: 0 auto;
+    background: $about-background-large;
+    border-radius: 41px;
+  }
+
+  @media (width >= $xlarge) {
+    max-width: 1140px;
+  }
+
+  @media (width >= $xxlarge) {
+    max-width: 1194px;
+  }
+}
+
+.about {
+  padding-top: 51px;
+  padding-bottom: 60px;
+  background: $about-background;
+
+  @media (width >= $large) {
+    border-radius: 41px;
+    padding-top: 83px;
+    padding-bottom: 59px;
+    padding-left: 78px;
+    padding-right: 78px;
+    background: $about-background-hand;
+  }
+
+  .title {
+
+    h1 {
+      color: $about-h1-color;
+      font: $font-about-h1;
+      margin-bottom: 0;
+
+      @media (width >= $large) {
+        font: $font-about-h1-large;
+        max-width: 630px;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .text {
+    font: $font-subtitle;
+    margin-top: 22px;
+    color: $about-h1-color;
+
+    @media (width >= $large) {
+      font-size: 16px;
+      color: $primary-color;
+    }
+
+    p {
+      margin-bottom: 20px;
+
+      @media (width >= $large) {
+        max-width: 788px;
+        margin-bottom: 23px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.kern {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media (width >= $large) {
+    padding-top: 107px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .kernbox {
+
+    @media (width >= $large) {
+      padding-top: 29px;
+      padding-bottom: 29px;
+      padding-right: 30px;
+    }
+    
+    .title {
+      
+      h1 {
+        font: $font-kern-h1;
+        margin-bottom: 0;
+      }
+    }
+  
+    .text {
+      margin-top: 20px;
+      font: $font-subtitle;
+
+      @media (width >= $large) {
+        font-size: 16px;
+      }
+  
+      p {
+        margin-bottom: 20px;
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  
+    .werken {
+      margin-top: 26px;
+  
+      button {
+        background: $button-red;
+        height: 45px;
+        border-radius: 10px;
+        width: 100%;
+
+        @media (width >= $large) {
+          width: 269px;
+        }
+      }
+    }  
+  }
+}
+
+.photo-image {
+  background: transparent url('../images/Background.png') 0% 0% no-repeat padding-box;
+  background-size: 101%;
+  background-position: center;
+  height: 274px;
+
+  @media (width >= $large) {
+    background-size: 100%;
+    height: auto;
+    border-radius: 10px;
+    width: calc(100%/12*7 - 12px);
+  }
+}
+
+.footer {
+  background: $footer-background;
+  padding-top: 54px;
+  padding-bottom: 39px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font: $font-footer;
+  color: $footer-color;
+
+  @media (width >= $large) {
+    margin-top: 152px;
+    padding-bottom: 22px;
+    padding-top: 45px;
+  }
+
+  .footerbox {
+    @media (width >= $large) {
+      max-width: 960px;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+    @media (width >= $xlarge) {
+      max-width: 1140px;
+    }
+  
+    @media (width >= $xxlarge) {
+      max-width: 1194px;
+    }
+  }
+
+  .logo-image {
+    @media (width >= $large) {
+      margin-top: 7px;
+    }
+  }
+
+  .adres {
+    margin-top: 35px;
+    
+    @media (width >= $large) {
+      margin-top: 0;
+    }
+  }
+
+  .contact {
+    margin-top: 19px;
+
+    @media (width >= $large) {
+      margin-top: 24px;
+    }
+  }
+
+  .times {
+    margin-top: 37px;
+    
+    @media (width >= $large) {
+      margin-top: 0;
+    }
+  }
+
+  .rules {
+    margin-top: 74px;
+    font: $font-footer-smaller;
+
+    @media (width >= $large) {
+      margin-top: 112px;
+      height: auto;
+    }
+  }
+
+  .creator {
+    margin-top: 33px;
+    font: $font-footer-smaller;
+
+    @media (width >= $large) {
+      margin-top: 112px;
+    }
+  }
 }

@@ -1,0 +1,75 @@
+$font-a: normal normal 700 26px/36px Poppins;
+
+$color-a: #242424;
+$color-white: #ffffff;
+
+$background-overlay: transparent linear-gradient(328deg, #FFCC00 0%, #FFA200 100%) 0% 0% no-repeat padding-box;
+
+.overlay {   
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background: $background-overlay;
+    overflow-x: hidden;
+    transition: 0.5s;
+  
+  .overlay-content {
+    position: relative;
+    top: calc(50% - (445px / 2));
+    width: 100%;
+    text-align: center;
+
+    .login-button {
+        height: 65px;
+        width: 197px
+    }
+
+    a {
+        padding-bottom: 40px;
+        text-decoration: none;
+        font: $font-a;
+        color: $color-a;
+        display: block;
+        transition: 0.3s;
+    
+        &:hover {
+            color: #f1f1f1;
+        }
+    
+        &:focus {
+            color: #f1f1f1;
+        }
+    }
+  }
+
+  .closebtn {
+    position: absolute;
+    z-index: 1;
+    top: 23px;
+    right: 12px;
+    font-size: 60px;
+    color: $color-white;
+  }
+
+  .overlay-image {
+    position: absolute;
+    width: 0;
+    height: 35px;
+    left: 21px;
+    top: 35px;
+    transition: 0.5s
+  }
+}
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
