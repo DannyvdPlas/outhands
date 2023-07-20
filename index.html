@@ -26,11 +26,11 @@
           
             <!-- Overlay content -->
             <div class="overlay-content">
-              <a href="#">Over ons</a>
-              <a href="#">Diensten</a>
-              <a href="#">Thema's</a>
-              <a href="#">Nieuws</a>
-              <a href="#">Contact</a>
+              <a href="#about" onclick="closeNav()">Over ons</a>
+              <a href="#diensten" onclick="closeNav()">Diensten</a>
+              <a href="#kennis" onclick="closeNav()">Thema's</a>
+              <a href="#nieuws-mobile" onclick="closeNav()">Nieuws</a>
+              <a href="#terugbellen-mobile" onclick="closeNav()">Contact</a>
               <button type="button" class="btn btn-danger login-button">Login</button>
             </div>
           
@@ -47,11 +47,11 @@
                     <nav class="navbar navbar-expand">
                         <div class="container-fluid justify-content-center">
                             <div class="navbar-nav">
-                                <a class="nav-link" href="#">Over ons</a>
-                                <a class="nav-link" href="#">Diensten</a>
-                                <a class="nav-link" href="#">Thema's</a>
-                                <a class="nav-link" href="#">Nieuws</a>
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link" href="#about">Over ons</a>
+                                <a class="nav-link" href="#diensten">Diensten</a>
+                                <a class="nav-link" href="#kennis">Thema's</a>
+                                <a class="nav-link" href="#nieuws-desktop">Nieuws</a>
+                                <a class="nav-link" href="#terugbellen-desktop">Contact</a>
                             </div>
                         </div>
                     </nav>
@@ -76,7 +76,7 @@
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco <b>laboris nisi ut aliquip</b> ex ea commodo.
                         </div>
                         <div class="col-12 about-us">
-                            <button type="button" class="btn btn-link">Over ons</button>
+                            <a class="btn btn-link">Over ons</a>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row diensten">
+            <div class="row diensten" id="diensten">
                 <div class="col-12 col-lg-6">
                     <div class="row">
                         <div class="col-12 dienstitle">
@@ -97,7 +97,7 @@
                             Lorem ipsum dolor sit amet, consectetur <b>adipiscing</b> elit, sed do eiusmod <b>tempor incididunt</b> ut labore et dolore magna aliqua consectetur adipiscing .
                         </div>
                         <div class="col-12 dienstlink">
-                            <a href="">Bekijk al onze diensten</a>
+                            <a href="">Bekijk al onze diensten<i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                 </div>
             </div>
         </div>
-        <div class="container nieuws d-lg-none">
+        <div class="container nieuws d-lg-none" id="nieuws-mobile">
             <div class="row">
                 <div class="col-12 title">
                     <h1>Het laatste nieuws</h1>
@@ -242,7 +242,7 @@
                 </div>
             </div>
         </div>
-        <div class="container terugbellen d-lg-none">
+        <div class="container terugbellen d-lg-none" id="terugbellen-mobile">
             <div class="row">
                 <div class="col-12 title">
                     <h1>Teruggebeld worden?</h1>
@@ -254,7 +254,7 @@
                     <form>
                         <div class="form-group">
                             <input type="number" class="form-control nummer" placeholder="telefoonnummer">
-                            <button type="submit" class="btn btn-primary">Bel mij terug</button>
+                            <button type="submit" class="btn btn-danger">Bel mij terug</button>
                         </div>
                     </form>
                 </div>
@@ -262,7 +262,7 @@
         </div>
         <div class="container ni-vo-te d-none d-lg-block">
             <div class="row">
-                <div class="col-6 nieuws">
+                <div class="col-6 nieuws" id="nieuws-desktop">
                     <div class="row">
                         <div class="col-12 title">
                             <h1>Het laatste nieuws</h1>
@@ -294,7 +294,7 @@
                 </div>
                 <div class="col-6 voordelen-terugbellen">
                     <div class="row">
-                        <div class="col-12 voordelen">
+                        <div class="col-12 voordelen" id="terugbellen-desktop">
                             <div class="row">
                                 <div class="col-12 title">
                                     <h1>De voordelen van Outhands</h1>
@@ -341,7 +341,7 @@
                 </div>
             </div>
         </div>
-        <div class="container kennis">
+        <div class="container kennis" id="kennis">
             <div class="row">
                 <div class="col-12 col-lg-6 kennisbox">
                     <div class="row g-0">
@@ -392,7 +392,7 @@
             </div>
         </div>
         <div class="background-div">
-            <div class="container about">
+            <div class="container about" id="about">
                 <div class="row">
                     <div class="col-12 title">
                         <h1>Dit is Outhands Internet & Media Full Service Digital Agency</h1>
@@ -420,7 +420,7 @@
                             <p>nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.</p>
                         </div>
                         <div class="col-12 werken">
-                            <button type="button" class="btn btn-danger">Kom werken bij Outhands</button>
+                            <button type="button" class="btn btn-danger">Kom werken bij Outhands</a>
                         </div>
                     </div>
                 </div>

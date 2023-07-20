@@ -5,6 +5,8 @@ $font-bold: normal normal 700 26px/33px Poppins;
 $font-main-h1-large: normal normal 700 54px/72px Poppins;
 $font-button-white: normal normal 600 16px/31px Poppins;
 $font-link: normal normal 600 15px/21px Poppins;
+$font-diensttitle-h1: normal normal 700 26px/35px Poppins;
+$font-diensttitle-h1-large: normal normal 700 38px/51px Poppins;
 $font-dienst: normal normal 500 18px/25px Poppins;
 $font-nieuws-h1: normal normal 700 26px/36px Poppins;
 $font-nieuwsitem-h5: normal normal 700 16px/23px Poppins;
@@ -33,7 +35,9 @@ $footer-color: #444444;
 $check-icon-color: #21910C;
 
 $button-white: #FFFFFF 0% 0% no-repeat padding-box;
+$button-white-hover: #000000 0% 0% no-repeat padding-box;
 $button-red: #FF3D00 0% 0% no-repeat padding-box;
+$button-red-hover: #A52600 0% 0% no-repeat padding-box;
 
 $icon-background: transparent linear-gradient(180deg, #E2B500 0%, #FFCC00 100%) 0% 0% no-repeat padding-box;
 $nieuws-background: #F5F5F5 0% 0% no-repeat padding-box;
@@ -65,6 +69,10 @@ body {
   background-repeat: no-repeat;
   background-size: 152%;
   background-position: -117px 0;
+
+  @media (width >= $tablet) {
+    background-position: -342px -156px;
+  }
 
   @media (width >= $large) {
     background-image: url(../images/background-shape.svg), url(../images/Background-element.svg);
@@ -142,6 +150,27 @@ body {
           color: $primary-color;
           padding-left: 17.5px;
           padding-right: 17.5px;
+          transition: transform 0.25s ease-out;
+          display: inline-block;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #000000;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+          }
+
+          &:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
         }
       }
     }
@@ -155,6 +184,10 @@ body {
       background: $button-red;
       border: 0;
       border-radius: 10px;
+
+      &:hover {
+        background: $button-red-hover;
+      }
     }
   }
 
@@ -213,13 +246,19 @@ body {
         margin-top: 32px;
       }
     
-      button {
+      .btn {
         background: $button-white;
         font: $font-button-white;
         text-decoration: none;
         color: $primary-color;
         border-radius: 10px;
         width: 178px;
+        line-height: 31px;
+
+        &:hover {
+          background: $button-white-hover;
+          color: #fff;
+        }
       }
     }
     
@@ -232,6 +271,7 @@ body {
         max-width: 851px;
         position: absolute;
         right: 20px;
+        padding: 0;
       }
 
       @media (Width >= $xlarge) {
@@ -251,6 +291,21 @@ body {
         border-radius: 20px;
         border: 8px solid white;
         overflow: hidden;
+        height: calc((100vw - 40px) / (851 / 537));
+
+        @media (width >= $tablet) {
+          height: calc((50vw - 20px) / (851 / 537));
+        }
+  
+        @media (Width >= $xlarge) {
+          height: calc((50vw - 50px) / (851 / 537));
+        }
+  
+        @media (width >= $xxlarge) {
+          height: calc((50vw - 94px) / (851 / 537));
+          max-height: 537px;
+        }
+  
         
         img {
           width: 100%;
@@ -263,14 +318,22 @@ body {
   .diensten {
     margin-top: 48px;
 
+    @media (width >=$tablet) {
+      margin-top: 214px;
+    }
+
     @media (width >= $large) {
       margin-top: 308px;
     }
   
     .dienstitle {
       h1 {
-        line-height: 35px;
+        font: $font-diensttitle-h1;
         margin: 0;
+
+        @media (width >= $large) {
+          font: $font-diensttitle-h1-large;
+        }
       }
     }
   
@@ -287,6 +350,14 @@ body {
       color: $link-color-yellow;
       font: $font-link;
       text-decoration: none;
+
+      i {
+        padding-left: 20px;
+
+        @media (width >= $large) {
+          padding-left: 36px;
+        }
+      }
     }
   
     .dienstbox {
@@ -455,6 +526,10 @@ body {
       border: 1px solid #FFFFFF;
       margin-top: 15px;
       border-radius: 10px;
+
+      &:hover {
+        background: $button-red-hover;
+      }
     }
   }
 }
@@ -750,6 +825,10 @@ body {
         height: 45px;
         border-radius: 10px;
         width: 100%;
+
+        &:hover {
+          background: $button-red-hover;
+        }
 
         @media (width >= $large) {
           width: 269px;

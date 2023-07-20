@@ -8,6 +8,11 @@ body {
   background-size: 152%;
   background-position: -117px 0;
 }
+@media (width >= 768px) {
+  body {
+    background-position: -342px -156px;
+  }
+}
 @media (width >= 992px) {
   body {
     background-image: url(../images/background-shape.svg), url(../images/Background-element.svg);
@@ -81,6 +86,25 @@ body {
   color: #242424;
   padding-left: 17.5px;
   padding-right: 17.5px;
+  transition: transform 0.25s ease-out;
+  display: inline-block;
+  position: relative;
+}
+.main .menu-bar .navbar .navbar-nav a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.main .menu-bar .navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .main .login-button button {
   height: 45px;
@@ -89,6 +113,9 @@ body {
   background: #FF3D00 0% 0% no-repeat padding-box;
   border: 0;
   border-radius: 10px;
+}
+.main .login-button button:hover {
+  background: #A52600 0% 0% no-repeat padding-box;
 }
 .main .header {
   margin-top: 55px;
@@ -148,13 +175,18 @@ body {
     margin-top: 32px;
   }
 }
-.main .header .about-us button {
+.main .header .about-us .btn {
   background: #FFFFFF 0% 0% no-repeat padding-box;
   font: normal normal 600 16px/31px Poppins;
   text-decoration: none;
   color: #242424;
   border-radius: 10px;
   width: 178px;
+  line-height: 31px;
+}
+.main .header .about-us .btn:hover {
+  background: #000000 0% 0% no-repeat padding-box;
+  color: #fff;
 }
 .main .header .header-image {
   margin-top: 33px;
@@ -166,6 +198,7 @@ body {
     max-width: 851px;
     position: absolute;
     right: 20px;
+    padding: 0;
   }
 }
 @media (Width >= 1200px) {
@@ -186,6 +219,23 @@ body {
   border-radius: 20px;
   border: 8px solid white;
   overflow: hidden;
+  height: calc((100vw - 40px) / 1.5847299814);
+}
+@media (width >= 768px) {
+  .main .header .header-image .image {
+    height: calc((50vw - 20px) / 1.5847299814);
+  }
+}
+@media (Width >= 1200px) {
+  .main .header .header-image .image {
+    height: calc((50vw - 50px) / 1.5847299814);
+  }
+}
+@media (width >= 1400px) {
+  .main .header .header-image .image {
+    height: calc((50vw - 94px) / 1.5847299814);
+    max-height: 537px;
+  }
 }
 .main .header .header-image .image img {
   width: 100%;
@@ -194,14 +244,24 @@ body {
 .main .diensten {
   margin-top: 48px;
 }
+@media (width >= 768px) {
+  .main .diensten {
+    margin-top: 214px;
+  }
+}
 @media (width >= 992px) {
   .main .diensten {
     margin-top: 308px;
   }
 }
 .main .diensten .dienstitle h1 {
-  line-height: 35px;
+  font: normal normal 700 26px/35px Poppins;
   margin: 0;
+}
+@media (width >= 992px) {
+  .main .diensten .dienstitle h1 {
+    font: normal normal 700 38px/51px Poppins;
+  }
 }
 .main .diensten .diensttext {
   font: normal normal 400 14px/24px Poppins;
@@ -214,6 +274,14 @@ body {
   color: #E2B500;
   font: normal normal 600 15px/21px Poppins;
   text-decoration: none;
+}
+.main .diensten a i {
+  padding-left: 20px;
+}
+@media (width >= 992px) {
+  .main .diensten a i {
+    padding-left: 36px;
+  }
 }
 .main .diensten .dienstbox {
   margin-top: 50px;
@@ -363,6 +431,9 @@ body {
   border: 1px solid #FFFFFF;
   margin-top: 15px;
   border-radius: 10px;
+}
+.terugbellen .form button:hover {
+  background: #A52600 0% 0% no-repeat padding-box;
 }
 
 .ni-vo-te .nieuws {
@@ -626,6 +697,9 @@ body {
   border-radius: 10px;
   width: 100%;
 }
+.kern .kernbox .werken button:hover {
+  background: #A52600 0% 0% no-repeat padding-box;
+}
 @media (width >= 992px) {
   .kern .kernbox .werken button {
     width: 269px;
@@ -761,6 +835,7 @@ body {
 }
 .overlay .overlay-content a:hover {
   color: #f1f1f1;
+  text-decoration: underline;
 }
 .overlay .overlay-content a:focus {
   color: #f1f1f1;
