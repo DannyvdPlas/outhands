@@ -360,6 +360,14 @@ body {
   font: normal normal 600 16px/23px Poppins;
   text-decoration: none;
 }
+.nieuws .nieuwslink a i {
+  padding-left: 20px;
+}
+@media (width >= 992px) {
+  .nieuws .nieuwslink a i {
+    padding-left: 36px;
+  }
+}
 
 .voordelen {
   padding-top: 30px;
@@ -512,6 +520,14 @@ body {
   color: #E2B500;
   font: normal normal 600 16px/23px Poppins;
   text-decoration: none;
+}
+.kennis .kennisbox .kennislink a i {
+  padding-left: 20px;
+}
+@media (width >= 992px) {
+  .kennis .kennisbox .kennislink a i {
+    padding-left: 36px;
+  }
 }
 .kennis .slider {
   margin-top: 37px;
